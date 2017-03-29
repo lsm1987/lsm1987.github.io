@@ -1,0 +1,3 @@
+[submodule "RandomGenerator"]
+	path = RandomGenerator
+	url = https://github.com/lsm1987/RandomGenerator.git
