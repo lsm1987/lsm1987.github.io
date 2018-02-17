@@ -13,3 +13,6 @@ A grand(?) epic about finding runaway chickens! - Made by RPG Maker
 
 ## Download
 - [Google Play](https://play.google.com/store/apps/details?id=com.lsm1987.chickenquest)
+
+## Contact Us
+- 1987lsm@gmail.com
