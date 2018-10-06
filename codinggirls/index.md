@@ -18,6 +18,7 @@ Live2D 로 움직이는 귀여운 코딩 소녀와 함께라면 어려운 프로
 
 ## Download
 - [Google Play](https://play.google.com/store/apps/details?id=com.lsm1987.CodingGirls)
+- [App Store](https://itunes.apple.com/us/app/%EA%B0%80%EB%A5%B4%EC%B3%90%EC%A4%98-%EC%BD%94%EB%94%A9-%EC%86%8C%EB%85%80/id1437807884?mt=8)
 
 ## Contact Us
 - 1987lsm@gmail.com
