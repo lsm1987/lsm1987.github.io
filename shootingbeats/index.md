@@ -2,9 +2,9 @@ Shooting Beats!
 ===
 ![GraphicImage](images/GraphicImage.png)
 
-Shooting with the music beats!
-Dodge the bullet curtains with the music and get score by shooting Beat Core.
-Compete your score with friends and the whole world player at leaderboard of each music.
+Shooting with the music beats!  
+Dodge the bullet curtains with the music and get score by shooting Beat Core.  
+Compete your score with friends and the whole world player at leaderboard of each music.  
 
 Beat list:
 - Ievan Polkka
