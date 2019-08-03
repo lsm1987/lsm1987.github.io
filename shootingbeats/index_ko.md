@@ -2,17 +2,17 @@ Shooting Beats!
 ===
 ![GraphicImage](images/GraphicImage.png)
 
-Shooting with the music beats!
-Dodge the bullet curtains with the music and get score by shooting Beat Core.
-Compete your score with friends and the whole world player at leaderboard of each music.
+비트를 타고 슈팅을 즐겨보세요!
+음악에 맞춰 발사되는 탄막을 피해, 비트 코어를 맞춰 점수를 획득해 보세요.
+리더보드를 통해 친구들이나 전 세계의 플레이어들과 점수를 경쟁할 수 있습니다.
 
-Beat list:
+비트 목록:
 - Ievan Polkka
-- Rainbow Socialism
-- Turkish March
+- 무지개빛 사회주의
+- 터키 행진곡
 - Calc.
 
-Check source code of 'Shooting Beats!' at GitHub.  
+'Shooting Beats!' 의 소스코드는 GitHub 에 공개되어 있습니다.
 [https://github.com/lsm1987/ShootingBeats](https://github.com/lsm1987/ShootingBeats)
 
 ## Screenshots
