@@ -1,0 +1,28 @@
+Shooting Beats!
+===
+![GraphicImage](images/GraphicImage.png)
+
+Shooting with the music beats!
+Dodge the bullet curtains with the music and get score by shooting Beat Core.
+Compete your score with friends and the whole world player at leaderboard of each music.
+
+Beat list:
+- Ievan Polkka
+- Rainbow Socialism
+- Turkish March
+- Calc.
+
+Check source code of 'Shooting Beats!' at GitHub.
+[https://github.com/lsm1987/ShootingBeats](https://github.com/lsm1987/ShootingBeats)
+
+## Screenshots
+![](images/Screenshot_Ready_Phone_5_5.png)
+![](images/Screenshot_Play1_Phone_5_5.png)
+![](images/Screenshot_Play2_Phone_5_5.png)
+![](images/Screenshot_List_Phone_5_5.png)
+
+## Download
+- [Google Play](https://play.google.com/store/apps/details?id=com.lsm1987.ShootingBeats)
+
+## Contact Us
+- 1987lsm@gmail.com
