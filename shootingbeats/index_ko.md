@@ -23,6 +23,7 @@ Shooting Beats!
 
 ## Download
 - [Google Play](https://play.google.com/store/apps/details?id=com.lsm1987.ShootingBeats)
+- [App Store](https://apps.apple.com/kr/app/id1474525871)
 
 ## Contact Us
 - 1987lsm@gmail.com
