@@ -1,4 +1,4 @@
-GitHub Pages of lsm1987
+Works of lsm1987
 ===
 
 ## Game
@@ -20,6 +20,9 @@ GitHub Pages of lsm1987
   * [[GitHub]](https://github.com/lsm1987/sd-gundam-keyboard-fighter)
 * [이봐, 친구! 그거 알아?](./RandomGenerator/Lemon)
   * [[GitHub]](https://github.com/lsm1987/RandomGenerator)
+
+## Translation
+* [메카 액션 게임 『DAEMON X MACHINA』 신념과 피와 강철의 개발사례](https://www.slideshare.net/SangminLim/daemon-x-machina)
 
 ## Contact Us
 - 1987lsm@gmail.com
