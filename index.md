@@ -23,6 +23,7 @@ Works of lsm1987
 
 ## Translation
 * [메카 액션 게임 『DAEMON X MACHINA』 신념과 피와 강철의 개발사례](https://www.slideshare.net/SangminLim/daemon-x-machina)
+* [칼리굴라 오버도즈의 UE4 데이터 이식 안내서](https://www.slideshare.net/SangminLim/ue4-236822200)
 
 ## Contact Us
 - 1987lsm@gmail.com
