@@ -21,7 +21,7 @@ const modelPath = "models/shizuku/shizuku.model.json";
   async function setup() {
     const screenWidth = app.screen.width;
     const screenHeight = app.screen.height;
-    console.log("screen w:" + screenWidth + " h: " + screenHeight);
+    //console.log("screen w:" + screenWidth + " h: " + screenHeight);
 
     // 배경
     backgroundSprite = new PIXI.Sprite(app.loader.resources[backgroundPath].texture);
@@ -62,6 +62,32 @@ const modelPath = "models/shizuku/shizuku.model.json";
 
     // 로딩 해제
     app.stage.removeChild(loadingContainer);
+
+    // 인자 반영
+    const url = new URL(window.location.href);
+    const motionName = url.searchParams.get('motion');
+    const expressionName = url.searchParams.get('expression');
+    const focusXRatioString = url.searchParams.get('focusXRatio'); // 좌: 0, 우: 1
+    const focusYRatioString = url.searchParams.get('focusYRatio'); // 상: 0, 하: 1
+    //console.log("motion: " + motionName, " expression: " + expressionName);
+
+    if (motionName)
+    {
+      model.motion(motionName);
+    }
+
+    if (expressionName)
+    {
+      model.expression(expressionName);
+    }
+
+    if (focusXRatioString != null || focusYRatioString != null)
+    {
+      const focusXRatio = (focusXRatioString != null) ? Number(focusXRatioString) : 0.5;
+      const focusYRatio = (focusYRatioString != null) ? Number(focusYRatioString) : 0.5;
+      //console.log("focusXRatio: " + focusXRatio, " focusYRatio: " + focusYRatio);
+      model.focus(screenWidth * focusXRatio, screenHeight * focusYRatio);
+    }
   }
 
   app.renderer.on('resize', (width, height) => {
