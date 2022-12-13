@@ -85,8 +85,10 @@ const modelPath = "models/shizuku/shizuku.model.json";
     {
       const focusXRatio = (focusXRatioString != null) ? Number(focusXRatioString) : 0.5;
       const focusYRatio = (focusYRatioString != null) ? Number(focusYRatioString) : 0.5;
-      //console.log("focusXRatio: " + focusXRatio, " focusYRatio: " + focusYRatio);
-      model.focus(screenWidth * focusXRatio, screenHeight * focusYRatio);
+      
+      // 즉시 실행하면 방향 잘못되는 경우 있어 딜레이 지정
+      await sleep(300);
+      ArrangeFocusPosition(model, focusXRatio, focusYRatio, screenWidth, screenHeight);
     }
   }
 
@@ -115,4 +117,15 @@ function ArrangeModelTransform(model, originalHeight, screenWidth, screenHeight)
   model.scale.set(scale);
   model.x = screenWidth / 2.0;
   model.y = screenHeight;
+}
+
+function ArrangeFocusPosition(model, focusXRatio, focusYRatio, screenWidth, screenHeight) {
+  const focusX = screenWidth * focusXRatio;
+  const focusY = screenHeight * focusYRatio;
+  model.focus(focusX, focusY);
+  //console.log("resize focusXRatio: " + focusXRatio + " focusYRatio: " + focusYRatio + " screenW: " + screenWidth + " screenH: " + screenHeight + " x: " + focusX + " y: " + focusY );
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
