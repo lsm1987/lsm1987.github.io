@@ -126,6 +126,11 @@ function ArrangeFocusPosition(model, focusXRatio, focusYRatio, screenWidth, scre
   //console.log("resize focusXRatio: " + focusXRatio + " focusYRatio: " + focusYRatio + " screenW: " + screenWidth + " screenH: " + screenHeight + " x: " + focusX + " y: " + focusY );
 }
 
+function ClearFocus(model)
+{
+  model.internalModel.focusController.focus(0, 0, false);
+}
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
