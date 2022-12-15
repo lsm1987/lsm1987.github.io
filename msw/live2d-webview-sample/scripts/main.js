@@ -10,6 +10,7 @@ const modelPath = "models/shizuku/shizuku.model.json";
   });
 
   let backgroundSprite;
+  let backgroundSpriteOriginalWidth;
   let backgroundSpriteOriginalHeight;
   let model;
   let modelOriginalHeight;
@@ -26,11 +27,12 @@ const modelPath = "models/shizuku/shizuku.model.json";
     // 배경
     backgroundSprite = new PIXI.Sprite(app.loader.resources[backgroundPath].texture);
     //console.log("background w:" + backgroundSprite.width + " h: " + backgroundSprite.height);
+    backgroundSpriteOriginalWidth = backgroundSprite.width;
     backgroundSpriteOriginalHeight = backgroundSprite.height;
 
     app.stage.addChild(backgroundSprite);
     backgroundSprite.anchor.set(0.5, 0.5);
-    ArrangeBackgroundTransform(backgroundSprite, backgroundSpriteOriginalHeight, screenWidth, screenHeight);
+    ArrangeBackgroundTransform(backgroundSprite, backgroundSpriteOriginalWidth, backgroundSpriteOriginalHeight, screenWidth, screenHeight);
 
     // 로딩 표시
     const loadingText = new PIXI.Text('Loading...', {
@@ -93,9 +95,9 @@ const modelPath = "models/shizuku/shizuku.model.json";
   }
 
   app.renderer.on('resize', (width, height) => {
-    if (backgroundSprite && backgroundSpriteOriginalHeight)
+    if (backgroundSprite && backgroundSpriteOriginalWidth && backgroundSpriteOriginalHeight)
     {
-      ArrangeBackgroundTransform(backgroundSprite, backgroundSpriteOriginalHeight, width, height);
+      ArrangeBackgroundTransform(backgroundSprite, backgroundSpriteOriginalWidth, backgroundSpriteOriginalHeight, width, height);
     }
 
     if (model && modelOriginalHeight)
@@ -105,8 +107,10 @@ const modelPath = "models/shizuku/shizuku.model.json";
   })
 })();
 
-function ArrangeBackgroundTransform(backgroundSprite, originalHeight, screenWidth, screenHeight) {
-  var scale = screenHeight / originalHeight;
+function ArrangeBackgroundTransform(backgroundSprite, originalWidth, originalHeight, screenWidth, screenHeight) {
+  const spriteRatio = originalWidth / originalHeight;
+  const screenRatio = screenWidth / screenHeight;
+  const scale = (spriteRatio > screenRatio) ? (screenHeight / originalHeight) : (screenWidth / originalWidth);
   backgroundSprite.scale.set(scale);
   backgroundSprite.x = screenWidth / 2.0;
   backgroundSprite.y = screenHeight / 2.0;
