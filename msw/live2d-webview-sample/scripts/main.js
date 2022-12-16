@@ -14,6 +14,10 @@ const modelPath = "models/shizuku/shizuku.model.json";
   let backgroundSpriteOriginalHeight;
   let model;
   let modelOriginalHeight;
+  
+  let loadingContainer = CreateLoadingContainer();
+  app.stage.addChild(loadingContainer);
+  ArrangeLoadingContainerTransform(loadingContainer, app.screen.width, app.screen.height);
 
   app.loader
     .add(backgroundPath)
@@ -34,24 +38,10 @@ const modelPath = "models/shizuku/shizuku.model.json";
     backgroundSprite.anchor.set(0.5, 0.5);
     ArrangeBackgroundTransform(backgroundSprite, backgroundSpriteOriginalWidth, backgroundSpriteOriginalHeight, screenWidth, screenHeight);
 
-    // 로딩 표시
-    const loadingText = new PIXI.Text('Loading...', {
-      fontSize: 75,
-      fill: "black"
-    });
-
-    const loadingSprite = new PIXI.Sprite(PIXI.Texture.WHITE);
-    loadingSprite.width = loadingText.width;
-    loadingSprite.height = loadingText.height;
-
-    const loadingContainer = new PIXI.Container();
-    loadingContainer.addChild(loadingSprite, loadingText);
+    // 로딩이 위에 보이도록
+    app.stage.removeChild(loadingContainer);
     app.stage.addChild(loadingContainer);
-
-    loadingContainer.pivot.x = loadingContainer.width;
-    loadingContainer.pivot.y = loadingContainer.height;
-    loadingContainer.x = screenWidth;
-    loadingContainer.y = screenHeight;
+    ArrangeLoadingContainerTransform(loadingContainer, screenWidth, screenHeight);
 
     // 모델
     model = await PIXI.live2d.Live2DModel.from(modelPath, { autoInteract: false });
@@ -64,6 +54,7 @@ const modelPath = "models/shizuku/shizuku.model.json";
 
     // 로딩 해제
     app.stage.removeChild(loadingContainer);
+    loadingContainer = null;
 
     // 인자 반영
     const url = new URL(window.location.href);
@@ -95,6 +86,11 @@ const modelPath = "models/shizuku/shizuku.model.json";
   }
 
   app.renderer.on('resize', (width, height) => {
+    if (loadingContainer)
+    {
+      ArrangeLoadingContainerTransform(loadingContainer, width, height);
+    }
+
     if (backgroundSprite && backgroundSpriteOriginalWidth && backgroundSpriteOriginalHeight)
     {
       ArrangeBackgroundTransform(backgroundSprite, backgroundSpriteOriginalWidth, backgroundSpriteOriginalHeight, width, height);
@@ -106,6 +102,29 @@ const modelPath = "models/shizuku/shizuku.model.json";
     }
   })
 })();
+
+function CreateLoadingContainer() {
+  const loadingText = new PIXI.Text('Loading...', {
+    fontSize: 75,
+    fill: "black"
+  });
+
+  const loadingSprite = new PIXI.Sprite(PIXI.Texture.WHITE);
+  loadingSprite.width = loadingText.width;
+  loadingSprite.height = loadingText.height;
+
+  const loadingContainer = new PIXI.Container();
+  loadingContainer.addChild(loadingSprite, loadingText);
+  loadingContainer.pivot.x = loadingContainer.width;
+  loadingContainer.pivot.y = loadingContainer.height;
+
+  return loadingContainer;
+}
+
+function ArrangeLoadingContainerTransform(loadingContainer, screenWidth, screenHeight) {
+  loadingContainer.x = screenWidth;
+  loadingContainer.y = screenHeight;
+}
 
 function ArrangeBackgroundTransform(backgroundSprite, originalWidth, originalHeight, screenWidth, screenHeight) {
   const spriteRatio = originalWidth / originalHeight;
