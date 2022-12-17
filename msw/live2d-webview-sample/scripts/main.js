@@ -15,9 +15,15 @@ const modelPath = "models/shizuku/shizuku.model.json";
   let model;
   let modelOriginalHeight;
   
+  let loadingElapsedMs = 0;
+  let loadingTicker = new PIXI.Ticker();
+  loadingTicker.autoStart = false;
+  loadingTicker.add(OnUpdateLoadingTicker, PIXI.UPDATE_PRIORITY.LOW);
+
   let loadingContainer = CreateLoadingContainer();
   app.stage.addChild(loadingContainer);
   ArrangeLoadingContainerTransform(loadingContainer, app.screen.width, app.screen.height);
+  StartLoadingTicker();
 
   app.loader
     .add(backgroundPath)
@@ -42,6 +48,7 @@ const modelPath = "models/shizuku/shizuku.model.json";
     app.stage.removeChild(loadingContainer);
     app.stage.addChild(loadingContainer);
     ArrangeLoadingContainerTransform(loadingContainer, screenWidth, screenHeight);
+    StartLoadingTicker();
 
     // 모델
     model = await PIXI.live2d.Live2DModel.from(modelPath, { autoInteract: false });
@@ -55,6 +62,7 @@ const modelPath = "models/shizuku/shizuku.model.json";
     // 로딩 해제
     app.stage.removeChild(loadingContainer);
     loadingContainer = null;
+    RemoveLoadingTicker();
 
     // 인자 반영
     const url = new URL(window.location.href);
@@ -101,6 +109,41 @@ const modelPath = "models/shizuku/shizuku.model.json";
       ArrangeModelTransform(model, modelOriginalHeight, width, height);
     }
   })
+
+  function StartLoadingTicker()
+  {
+    if (loadingTicker && loadingContainer)
+    {
+      loadingElapsedMs = 0;
+      loadingContainer.visible = false;
+      loadingTicker.start();
+    }
+  }
+
+  function OnUpdateLoadingTicker(time)
+  {
+    if (loadingTicker)
+    {
+      loadingElapsedMs += loadingTicker.deltaMS;
+
+      if (loadingElapsedMs >= 1000)
+      {
+        if (loadingContainer)
+        {
+          loadingContainer.visible = true;
+        }
+      }
+    }
+  }
+
+  function RemoveLoadingTicker()
+  {
+    if (loadingTicker)
+    {
+      loadingTicker.stop();
+      loadingTicker = null;
+    }
+  }
 })();
 
 function CreateLoadingContainer() {
