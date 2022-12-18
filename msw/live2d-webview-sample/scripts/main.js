@@ -44,6 +44,9 @@ const modelPath = "models/shizuku/shizuku.model.json";
     backgroundSprite.anchor.set(0.5, 0.5);
     ArrangeBackgroundTransform(backgroundSprite, backgroundSpriteOriginalWidth, backgroundSpriteOriginalHeight, screenWidth, screenHeight);
 
+    backgroundSprite.interactive = true;
+    backgroundSprite.on('click', HandleClickCommand);
+
     // 로딩이 위에 보이도록
     app.stage.removeChild(loadingContainer);
     app.stage.addChild(loadingContainer);
@@ -144,6 +147,199 @@ const modelPath = "models/shizuku/shizuku.model.json";
       loadingTicker = null;
     }
   }
+
+  // 클릭을 명령으로 변환, 처리
+  function HandleClickCommand(e) {
+    const clickPosition = e.data.global; // 좌상단 원점, 우하단 양수
+    const xRatio = clickPosition.x / app.screen.width;
+    const yRatio = clickPosition.y / app.screen.height;
+    //console.log("[test] global: (" + e.data.global.x + ", " + e.data.global.y + ") screenSize: (" + app.screen.width + ", " + app.screen.height + ") ratio: (" + xRatio +  ", " + yRatio + ")");
+
+    // 화면 내 클릭 위치로 커맨드 종류(세로 좌표), 인자(가로 좌표) 지정.
+    const commandCategoryIdxMotion = 0;
+    const commandCategoryIdxExpression = 1;
+    const commandCategoryIdxFocus = 2;
+    const commandCategoryCount = 3;
+    const commandCategoryIdx = parseInt(yRatio / (1 / commandCategoryCount));
+
+    switch (commandCategoryIdx)
+    {
+      case commandCategoryIdxMotion:
+      {
+        HandleMotionCommand(xRatio);
+        break;
+      }
+      case commandCategoryIdxExpression:
+      {
+        HandleExpressionCommand(xRatio);
+        break;
+      }
+      case commandCategoryIdxFocus:
+      {
+        HandleFocusCommand(xRatio);
+        break;
+      }
+      default:
+      {
+        console.log("Not handled command category index: " + commandCategoryIdx);
+        break;
+      }
+    }
+  }
+
+  function HandleMotionCommand(commandClickXRatio)
+  {
+    const motionParamIdxSay = 0;
+    const motionParamIdxMakeIt = 1;
+    const motionParamIdxSurprise = 2;
+    const motionParamIdxLaugh = 3;
+    const motionParamCount = 4;
+    const motionParamIdx = parseInt(commandClickXRatio / (1 / motionParamCount));
+
+    switch (motionParamIdx)
+    {
+      case motionParamIdxSay:
+      {
+        PlayMotion("flickHead_say");
+        break;
+      }
+      case motionParamIdxMakeIt:
+      {
+        PlayMotion("tap_body_makeIt");
+        break;
+      }
+      case motionParamIdxSurprise:
+      {
+        PlayMotion("shake_coverMouthSurprise");
+        break;
+      }
+      case motionParamIdxLaugh:
+      {
+        PlayMotion("shake_coverMouthLaugh");
+        break;
+      }
+      default:
+      {
+        console.log("Not handled motion parameter index: " + motionParamIdx);
+        break;
+      }
+    }
+  }
+
+  function PlayMotion(motionName)
+  {
+    if (model)
+    {
+      // 재생 중인 모션 덮어씀
+      model.motion(motionName, undefined, PIXI.live2d.MotionPriority.FORCE);
+    }
+  }
+
+  function HandleExpressionCommand(commandClickXRatio)
+  {
+    const expressionParamIdxNormal = 0;
+    const expressionParamIdxSour = 1;
+    const expressionParamIdxAngry = 2;
+    const expressionParamIdxTwinkle = 3;
+    const expressionParamCount = 4;
+    const expressionParamIdx = parseInt(commandClickXRatio / (1 / expressionParamCount));
+
+    switch (expressionParamIdx)
+    {
+      case expressionParamIdxNormal:
+      {
+        SetExpression("normal");
+        break;
+      }
+      case expressionParamIdxSour:
+      {
+        SetExpression("sour");
+        break;
+      }
+      case expressionParamIdxAngry:
+      {
+        SetExpression("angry");
+        break;
+      }
+      case expressionParamIdxTwinkle:
+      {
+        SetExpression("twinkle");
+        break;
+      }
+      default:
+      {
+        console.log("Not handled expression parameter index: " + expressionParamIdx);
+        break;
+      }
+    }
+  }
+
+  function SetExpression(expressionName)
+  {
+    if (model)
+    {
+      model.expression(expressionName);
+    }
+  }
+
+  function HandleFocusCommand(commandClickXRatio)
+  {
+    const focusParamIdxClear = 0;
+    const focusParamIdxLeft = 1;
+    const focusParamIdxRight = 2;
+    const focusParamIdxUp = 3;
+    const focusParamCount = 4;
+    const focusParamIdx = parseInt(commandClickXRatio / (1 / focusParamCount));
+
+    switch (focusParamIdx)
+    {
+      case focusParamIdxClear:
+      {
+        ClearFocus();
+        break;
+      }
+      case focusParamIdxLeft:
+      {
+        SetFocus(0, 0.5);
+        break;
+      }
+      case focusParamIdxRight:
+      {
+        SetFocus(1, 0.5);
+        break;
+      }
+      case focusParamIdxUp:
+      {
+        SetFocus(0.5, 0);
+        break;
+      }
+      default:
+      {
+        console.log("Not handled focus parameter index: " + focusParamIdx);
+        break;
+      }
+    }
+  }
+
+  function SetFocus(focusXRatio, focusYRatio)
+  {
+    if (model)
+    {
+      const screenWidth = app.screen.width;
+      const screenHeight = app.screen.height;
+      const focusX = screenWidth * focusXRatio;
+      const focusY = screenHeight * focusYRatio;
+      model.focus(focusX, focusY);
+    }
+  }
+
+  function ClearFocus()
+  {
+    if (model)
+    {
+      model.internalModel.focusController.focus(0, 0, false);
+    }
+  }
 })();
 
 function CreateLoadingContainer() {
@@ -190,11 +386,6 @@ function ArrangeFocusPosition(model, focusXRatio, focusYRatio, screenWidth, scre
   const focusY = screenHeight * focusYRatio;
   model.focus(focusX, focusY);
   //console.log("resize focusXRatio: " + focusXRatio + " focusYRatio: " + focusYRatio + " screenW: " + screenWidth + " screenH: " + screenHeight + " x: " + focusX + " y: " + focusY );
-}
-
-function ClearFocus(model)
-{
-  model.internalModel.focusController.focus(0, 0, false);
 }
 
 function sleep(ms) {
