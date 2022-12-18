@@ -13,10 +13,10 @@
   "physics": "shizuku.physics.json",
   "pose": "shizuku.pose.json",
   "expressions": [
-    {"name": "f01", "file": "expressions/f01.exp.json"},
-    {"name": "f02", "file": "expressions/f02.exp.json"},
-    {"name": "f03", "file": "expressions/f03.exp.json"},
-    {"name": "f04", "file": "expressions/f04.exp.json"}
+    {"name": "normal", "file": "expressions/f01.exp.json"},
+    {"name": "sour", "file": "expressions/f02.exp.json"},
+    {"name": "angry", "file": "expressions/f03.exp.json"},
+    {"name": "twinkle", "file": "expressions/f04.exp.json"}
   ],
   "hit_areas": [
     {"name": "head", "id": "D_REF.HEAD"},
@@ -25,33 +25,57 @@
   ],
   "motions": {
     "idle": [
-      {"file": "motions/idle_00.mtn", "fade_in": 2000, "fade_out": 2000},
-      {"file": "motions/idle_01.mtn", "fade_in": 2000, "fade_out": 2000},
+      {"file": "motions/idle_00.mtn", "fade_in": 2000, "fade_out": 2000}
+    ],
+    "idle_blushSmile": [
+      {"file": "motions/idle_01.mtn", "fade_in": 2000, "fade_out": 2000}
+    ],
+    "idle_blushIce": [
       {"file": "motions/idle_02.mtn", "fade_in": 2000, "fade_out": 2000}
     ],
-    "tap_body": [
-      {"file": "motions/tapBody_00.mtn"},
-      {"file": "motions/tapBody_01.mtn"},
+    "tap_body_sayNod": [
+      {"file": "motions/tapBody_00.mtn"}
+    ],
+    "tap_body_makeIt": [
+      {"file": "motions/tapBody_01.mtn"}
+    ],
+    "tap_body_sayShort": [
       {"file": "motions/tapBody_02.mtn"}
     ],
-    "pinch_in": [
-      {"file": "motions/pinchIn_00.mtn"},
-      {"file": "motions/pinchIn_01.mtn"},
+    "pinch_in_coverMouthSmile": [
+      {"file": "motions/pinchIn_00.mtn"}
+    ],
+    "pinch_in_coverMouthLookUp": [
+      {"file": "motions/pinchIn_01.mtn"}
+    ],
+    "pinch_in_coverMouthWorry": [
       {"file": "motions/pinchIn_02.mtn"}
     ],
-    "pinch_out": [
-      {"file": "motions/pinchOut_00.mtn"},
-      {"file": "motions/pinchOut_01.mtn"},
+    "pinch_out_sayNodeSmile": [
+      {"file": "motions/pinchOut_00.mtn"}
+    ],
+    "pinch_out_sayCloseEyes": [
+      {"file": "motions/pinchOut_01.mtn"}
+    ],
+    "pinch_out_sayCloseEyes2": [
       {"file": "motions/pinchOut_02.mtn"}
     ],
-    "shake": [
-      {"file": "motions/shake_00.mtn", "fade_in": 500},
-      {"file": "motions/shake_01.mtn", "fade_in": 500},
+    "shake_coverMouthNo": [
+      {"file": "motions/shake_00.mtn", "fade_in": 500}
+    ],
+    "shake_coverMouthLaugh": [
+      {"file": "motions/shake_01.mtn", "fade_in": 500}
+    ],
+    "shake_coverMouthSurprise": [
       {"file": "motions/shake_02.mtn", "fade_in": 500}
     ],
-    "flick_head": [
-      {"file": "motions/flickHead_00.mtn"},
-      {"file": "motions/flickHead_01.mtn"},
+    "flickHead_sayUp": [
+      {"file": "motions/flickHead_00.mtn"}
+    ],
+    "flickHead_say": [
+      {"file": "motions/flickHead_01.mtn"}
+    ],
+    "flickHead_sayUpDown": [
       {"file": "motions/flickHead_02.mtn"}
     ]
   }
