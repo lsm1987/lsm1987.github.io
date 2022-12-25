@@ -14,6 +14,7 @@ const modelPath = "models/shizuku/shizuku.model.json";
   let backgroundSpriteOriginalHeight;
   let model;
   let modelOriginalHeight;
+  let modelXRatio;
   
   let loadingElapsedMs = 0;
   let loadingTicker = new PIXI.Ticker();
@@ -30,6 +31,7 @@ const modelPath = "models/shizuku/shizuku.model.json";
     .load(setup);
 
   async function setup() {
+    const url = new URL(window.location.href);
     const screenWidth = app.screen.width;
     const screenHeight = app.screen.height;
     //console.log("screen w:" + screenWidth + " h: " + screenHeight);
@@ -57,10 +59,13 @@ const modelPath = "models/shizuku/shizuku.model.json";
     model = await PIXI.live2d.Live2DModel.from(modelPath, { autoInteract: false });
     //console.log("model w:" + model.width + " h: " + model.height); // model w:1280 h: 1380
     modelOriginalHeight = model.height;
-    
+
+    const modelXRatioString = url.searchParams.get('modelXRatio');
+    modelXRatio = (modelXRatioString != null) ? Number(modelXRatioString) : 0.5;
+
     app.stage.addChild(model);
     model.anchor.set(0.5, 1);
-    ArrangeModelTransform(model, modelOriginalHeight, screenWidth, screenHeight);
+    ArrangeModelTransform(model, modelOriginalHeight, modelXRatio, screenWidth, screenHeight);
 
     // 로딩 해제
     app.stage.removeChild(loadingContainer);
@@ -68,7 +73,6 @@ const modelPath = "models/shizuku/shizuku.model.json";
     RemoveLoadingTicker();
 
     // 인자 반영
-    const url = new URL(window.location.href);
     const motionName = url.searchParams.get('motion');
     const expressionName = url.searchParams.get('expression');
     const focusXRatioString = url.searchParams.get('focusXRatio'); // 좌: 0, 우: 1
@@ -109,7 +113,7 @@ const modelPath = "models/shizuku/shizuku.model.json";
 
     if (model && modelOriginalHeight)
     {
-      ArrangeModelTransform(model, modelOriginalHeight, width, height);
+      ArrangeModelTransform(model, modelOriginalHeight, modelXRatio, width, height);
     }
   })
 
@@ -374,10 +378,10 @@ function ArrangeBackgroundTransform(backgroundSprite, originalWidth, originalHei
   backgroundSprite.y = screenHeight / 2.0;
 }
 
-function ArrangeModelTransform(model, originalHeight, screenWidth, screenHeight) {
+function ArrangeModelTransform(model, originalHeight, modelXRatio, screenWidth, screenHeight) {
   var scale = screenHeight / originalHeight;
   model.scale.set(scale);
-  model.x = screenWidth / 2.0;
+  model.x = screenWidth * modelXRatio;
   model.y = screenHeight;
 }
 
