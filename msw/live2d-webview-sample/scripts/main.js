@@ -193,15 +193,21 @@ const modelPath = "models/shizuku/shizuku.model.json";
 
   function HandleMotionCommand(commandClickXRatio)
   {
-    const motionParamIdxSay = 0;
-    const motionParamIdxMakeIt = 1;
-    const motionParamIdxSurprise = 2;
-    const motionParamIdxLaugh = 3;
-    const motionParamCount = 4;
+    const motionParamIdxIdle = 0;
+    const motionParamIdxSay = 1;
+    const motionParamIdxMakeIt = 2;
+    const motionParamIdxSurprise = 3;
+    const motionParamIdxLaugh = 4;
+    const motionParamCount = 5;
     const motionParamIdx = parseInt(commandClickXRatio / (1 / motionParamCount));
 
     switch (motionParamIdx)
     {
+      case motionParamIdxIdle:
+      {
+        PlayMotion("idle");
+        break;
+      }
       case motionParamIdxSay:
       {
         PlayMotion("flickHead_say");
