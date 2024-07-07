@@ -11,7 +11,7 @@ Works of lsm1987
   * [[GitHub]](https://github.com/lsm1987/ShootingBeats)
 * Chicken Quest [[KO]](./chickenquest/index_ko) [[EN]](./chickenquest)
 * 덱빌딩 스무고개
-  * [소개](./twentyquestions)
+  * [소개](./msw/twentyquestions)
 
 ## Tool
 * DataExporter
