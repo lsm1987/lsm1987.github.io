@@ -64,3 +64,26 @@ Inpaint 로 일부만 바꿔본다 해도 다른 이미지에서의 마음에 �
 스탠딩 일러스트들을 자세히 보면 표정 뿐만 아니라 앞머리도 조금씩 바뀌는데, 이는 앞머리까지 inpaint 영역에 포함되었기 때문.  
   
 XD 표정은 해당 표정 만들어주는 Lora 사용([Comic expression eyes 1](https://civitai.com/models/134236)). 메이플스토리 Lora 비중을 낮춰야 표정 Lora 가 제대로 적용됐음.
+
+# 이벤트 일러스트 제작 과정
+
+![](images/HeadRest_OpenPose.png){: width="50%"}  
+Openpose 로 캐릭터 구도를 잡음.  
+
+![](images/00020-830103208.png){: width="50%"}  
+![](images/HeadRest_mlsd.png){: width="50%"}  
+![](images/HeadRest_mlsd_modified.png){: width="50%"}  
+적당한 배경 구도가 나올 때 까지 이미지 생성을 반복.  
+배경으로부터 mlsd 추출, 이미지 편집 프로그램으로 끊어진 부분 수정.  
+
+| 이미지 | 살릴 부분 |
+| --- | --- |
+| ![](images/00026-4277284299_960.png){: width="75%"} | 배경<br>상체 |
+| ![](images/00032-859078194_960.png){: width="75%"} | 책상<br>목 리본 |
+
+Openpose + mlsd 로 생성한 이미지들.  
+mlsd에서 선으로 채워지지 않은 곳에 불필요하게 얼굴이 추가된 약혐(...) 이미지가 생성됨.  
+각 이미지에서 살릴 부분을 합치고, 어색한 부분은 덧칠하여 가림
+
+![](images/HeadRest_960.png){: width="50%"}  
+완성본
