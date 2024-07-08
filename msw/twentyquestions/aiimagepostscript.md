@@ -65,15 +65,16 @@ Inpaint 로 일부만 바꿔본다 해도 다른 이미지에서의 마음에 �
   
 XD 표정은 해당 표정 만들어주는 Lora 사용([Comic expression eyes 1](https://civitai.com/models/134236)). 메이플스토리 Lora 비중을 낮춰야 표정 Lora 가 제대로 적용됐음.
 
-# 이벤트 일러스트 제작 과정
+# 타이틀 일러스트 제작 과정
 
-![](images/HeadRest_OpenPose.png){: width="50%"}  
+![](images/HeadRest_OpenPose.png){: width="75%"}  
 Openpose 로 캐릭터 구도를 잡음.  
 
-![](images/00020-830103208.png){: width="50%"}  
-![](images/HeadRest_mlsd.png){: width="50%"}  
-![](images/HeadRest_mlsd_modified.png){: width="50%"}  
+![](images/00020-830103208.png){: width="75%"}  
 적당한 배경 구도가 나올 때 까지 이미지 생성을 반복.  
+
+![](images/HeadRest_mlsd.png){: width="75%"}  
+![](images/HeadRest_mlsd_modified.png){: width="75%"}  
 배경으로부터 mlsd 추출, 이미지 편집 프로그램으로 끊어진 부분 수정.  
 
 | 이미지 | 살릴 부분 |
@@ -81,11 +82,11 @@ Openpose 로 캐릭터 구도를 잡음.
 | ![](images/00026-4277284299_960.png){: width="75%"} | 배경<br>상체 |
 | ![](images/00032-859078194_960.png){: width="75%"} | 책상<br>목 리본 |
 
-Openpose + mlsd 로 생성한 이미지들.  
+OpenPose + mlsd 로 생성한 이미지들.  
 mlsd에서 선으로 채워지지 않은 곳에 불필요하게 얼굴이 추가된 약혐(...) 이미지가 생성됨.  
 각 이미지에서 살릴 부분을 합치고, 어색한 부분은 덧칠하여 가림
 
-![](images/HeadRest_960.png){: width="50%"}  
+![](images/HeadRest_960.png){: width="75%"}  
 완성본
 
 # 작업 후기
@@ -94,7 +95,7 @@ mlsd에서 선으로 채워지지 않은 곳에 불필요하게 얼굴이 추가
 
 ### 처리 시간
 * 좋은 머신을 사용할수록 작업 시간을 절대적으로 줄일 수 있음
-* 작성자 PC 사양
+* 개발 PC 사양
   * Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz, 4 코어, 8 스레드
   * NVIDIA GeForce GTX 1070, VRAM 8GB
 * 이미지 생성 소요시간
@@ -108,8 +109,8 @@ mlsd에서 선으로 채워지지 않은 곳에 불필요하게 얼굴이 추가
 * 원하는 이미지가 나올 수 있도록 범위를 좁히는 기술이 필요함
 * 예시
   * 캐릭터: Lora 학습
-  * 포즈: [DesignDoll](https://terawell.net/en/)로 포징, OpenPose 로 뽑아냄
-  * 배경: [SketchUp](https://www.sketchup.com/en)으로 배경 공간 모델링, mlsd 로 뽑아냄
+  * 포즈: [DesignDoll](https://terawell.net/en/)로 포징, OpenPose 로 뽑아내기
+  * 배경: [SketchUp](https://www.sketchup.com/en)으로 배경 공간 모델링, mlsd 로 뽑아내기
 * 물론 Lora 학습 재료가 될 캐릭터 이미지를 만들어 낼 수 있었다면 AI를 안썼겠지만...
 * 위와 같이 범위를 좁혀 대량의 이미지를 빠르게 뽑아낼 수 있는 환경을 만들면 베스트일 듯
 
@@ -126,7 +127,7 @@ mlsd에서 선으로 채워지지 않은 곳에 불필요하게 얼굴이 추가
 * 각 프로젝트가 처한 상황이나 AI 이미지를 사용하는 목적에 따라 잘 판단해야 될 듯 함
 
 ### 작품성
-* 예시 이벤트 일러스트의 경우, "캐릭터가 책상에 앉아있다"는 정보는 전달되지만 재미나 감성이 부족함
+* 타이틀 일러스트의 경우, "캐릭터가 책상에 앉아있다"는 정보는 전달되지만 재미나 감성이 부족함
 * 감정을 불러일으킬 수 있는 그림을 만들기 위해서는 AI를 사용하더라도 역시 사람의 미술적 능력이 필요함
   * 포즈, 구도, 광원, 색감 등
 
@@ -134,6 +135,6 @@ mlsd에서 선으로 채워지지 않은 곳에 불필요하게 얼굴이 추가
 
 ![](images/00016-4075200446.png){: width="50%"}  
 
-* 예시 이벤트 일러스트를 만들던 도중에 나온 아쉬운 이미지.
+* 타이틀 일러스트를 만들던 도중에 나온 아쉬운 이미지
 * 무작위 딸깍 딸깍을 반복하다 보면 재미있는 구도의 그림이 나올 수도 있지만, 프롬프트나 이미지 크기를 바꾸다보면 또 느낌이 달라짐
 * 원하는 느낌을 설계하고, 의도적으로 뽑아낼 수 있도록 하는 사람의 능력이 중요해 보임
