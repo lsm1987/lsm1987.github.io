@@ -73,10 +73,12 @@ Openpose 로 캐릭터 구도를 잡음.
 ![](images/00020-830103208.png){: width="75%"}  
 밑그림으로 적당한 배경 구도가 나올 때 까지 이미지 생성을 반복.  
 
-| mlsd | 생성된 이미지 | 설명 |
-| --- | --- | --- |
-| ![](images/HeadRest_mlsd.png) | ![](images/00026-4277284299_960.png) | 밑그림 mlsd를 그대로 사용.<br>배경, 상체 살림 |
-| ![](images/HeadRest_mlsd_modified.png) | ![](images/00032-859078194_960.png) | mlsd 끊긴 부분 수정.<br>책상, 목 리본 살림 |
+| mlsd | 생성된 이미지 |
+| --- | --- |
+| ![](images/HeadRest_mlsd.png){: width="720"} | ![](images/00026-4277284299_960.png){: width="720"} |
+| 밑그림 mlsd를 그대로 사용 | 배경, 상체 살림 |
+| ![](images/HeadRest_mlsd_modified.png){: width="720"} | ![](images/00032-859078194_960.png){: width="720"} |
+| mlsd 선이 끊긴 부분 수정. | 책상, 목 리본 살림 |
 
 배경으로부터 mlsd 추출, OpenPose 와 조합하여 이미지 생성함(1시간 소요).  
 mlsd의 선이 끊긴 부분에 어색하게 가방이 생성되는 등의 문제 있어 선을 그려준 후 2차 생성(또 1시간 소요).  
