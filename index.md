@@ -10,6 +10,8 @@ Works of lsm1987
 * Shooting Beats! [[KO]](./shootingbeats/index_ko) [[EN]](./shootingbeats)
   * [[GitHub]](https://github.com/lsm1987/ShootingBeats)
 * Chicken Quest [[KO]](./chickenquest/index_ko) [[EN]](./chickenquest)
+* 좋아, 즐겁게 이야기했다
+  * [소개](./msw/live2d-webview-sample-intro)
 * 덱빌딩 스무고개
   * [소개](./msw/twentyquestions)
 
