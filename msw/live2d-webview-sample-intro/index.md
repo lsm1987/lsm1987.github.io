@@ -6,7 +6,8 @@ Live2D로 움직이는 단풍이와 즐겁게 이야기해보자!
 표정과 행동을 보고 단풍이가 좋아할 만한 대화를 선택해보세요.
 
 ## Screenshots
-![](images/Screenshot1_960.png)
+![](images/Screenshot1_960.png)  
+![](images/CharacterArea.png)
 
 ## Play
 - [좋아, 즐겁게 이야기했다: 메이플스토리 월드](https://maplestoryworlds.nexon.com/ko/play/f6d50c7a22ce4fdd9c042c4b352223de/)
