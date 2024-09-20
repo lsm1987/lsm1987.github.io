@@ -30,5 +30,13 @@ Works of lsm1987
 * [메카 액션 게임 『DAEMON X MACHINA』 신념과 피와 강철의 개발사례](https://www.slideshare.net/SangminLim/daemon-x-machina)
 * [칼리굴라 오버도즈의 UE4 데이터 이식 안내서](https://www.slideshare.net/SangminLim/ue4-236822200)
 
+## Article
+* [상속 관련 이것저것](https://www.slideshare.net/slideshow/ss-51700085/51700085)
+* [네이밍 관련 이것저것](https://www.slideshare.net/slideshow/150816/52995533)
+* [SonarQube 로 Unity 프로젝트 관리](https://www.slideshare.net/slideshow/sonarqube-unity/63438212)
+* [디미터의 법칙](https://www.slideshare.net/SangminLim/ss-63457159)
+* [Elo 평점 시스템](https://www.slideshare.net/slideshow/elo-64479893/64479893)
+* [빌드 좀 깨먹지 마라!](https://www.slideshare.net/slideshow/ss-112672676/112672676)
+
 ## Contact Us
 - 1987lsm@gmail.com
