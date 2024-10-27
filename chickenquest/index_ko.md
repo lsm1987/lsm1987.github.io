@@ -13,7 +13,7 @@ RPG 만들기로 제작한, 집 나간 닭을 찾아 떠나는 장대한(?) 서�
 
 ## Download
 - [Google Play](https://play.google.com/store/apps/details?id=com.lsm1987.chickenquest)
-- [~~App Store~~](https://itunes.apple.com/us/app/chicken-quest/id1349759642?mt=8)
+- [App Store](https://apps.apple.com/kr/app/id1349759642)
 
 ## Contact Us
 - 1987lsm@gmail.com
