@@ -27,8 +27,7 @@ Works of lsm1987
 * [유희왕 키보드 듀얼](https://keyboardduel.vercel.app)
 
 ## Translation
-* [메카 액션 게임 『DAEMON X MACHINA』 신념과 피와 강철의 개발사례](https://www.slideshare.net/SangminLim/daemon-x-machina)
-* [칼리굴라 오버도즈의 UE4 데이터 이식 안내서](https://www.slideshare.net/SangminLim/ue4-236822200)
+* [번역 목록](./Translations)
 
 ## Article
 * [상속 관련 이것저것](https://www.slideshare.net/slideshow/ss-51700085/51700085)
