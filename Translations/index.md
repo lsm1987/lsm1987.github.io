@@ -20,3 +20,7 @@ Translations
 ### 게임 외부에서 조작하는 유연한 디버그 메뉴 시스템
 * [번역](Files/CEDEC2023_%EA%B2%8C%EC%9E%84%20%EC%99%B8%EB%B6%80%EC%97%90%EC%84%9C%20%EC%A1%B0%EC%9E%91%ED%95%98%EB%8A%94%20%EC%9C%A0%EC%97%B0%ED%95%9C%20%EB%94%94%EB%B2%84%EA%B7%B8%20%EB%A9%94%EB%89%B4%20%EC%8B%9C%EC%8A%A4%ED%85%9C.pdf)
 * [원문](https://cedil.cesa.or.jp/cedil_sessions/view/2841)
+
+### 배경 레이아웃에서 읽어내는 『ELDEN RING』의 세계
+* [번역](Files/CEDEC2025_ELDEN%20RING_ko.pdf)
+* [원문](https://cedil.cesa.or.jp/cedil_sessions/view/3156)
