@@ -28,3 +28,7 @@ Translations
 ### ELDEN RING의 오픈 필드에 대응하기 위한 엔지니어 대처 사례 소개
 * [번역](Files/CEDEC2022_ELDEN%20RING%EC%9D%98%20%EC%98%A4%ED%94%88%20%ED%95%84%EB%93%9C%EC%97%90%20%EB%8C%80%EC%9D%91%ED%95%98%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%20%EB%8C%80%EC%B2%98%20%EC%82%AC%EB%A1%80%20%EC%86%8C%EA%B0%9C.pdf)
 * [원문](https://cedil.cesa.or.jp/cedil_sessions/view/2542)
+
+### NINJA GAIDEN 4의 숨지 않는 배틀 액션을 만드는 방법
+* [번역](Files/CEDEC2026_NINJA_GAIDEN_4%EC%9D%98_%EC%88%A8%EC%A7%80_%EC%95%8A%EB%8A%94_%EB%B0%B0%ED%8B%80_%EC%95%A1%EC%85%98%EC%9D%84_%EB%A7%8C%EB%93%9C%EB%8A%94_%EB%B0%A9%EB%B2%95.pdf)
+* [원문](https://cedil.cesa.or.jp/cedil_sessions/view/3326)
